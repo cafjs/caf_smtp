@@ -1,0 +1,35 @@
+{
+    "name": "top",
+    "env" : {
+        "appProtocol" : "http",
+        "appPublisher" :"root",
+        "appLocalName" : "smtp",
+        "appSuffix" : "vcap.me:3000"
+    },
+    "components": [
+        {
+            "name": "log",
+            "env" : {
+                  "logLevel" : "DEBUG"
+
+            }
+
+        },
+        {
+            "name": "security",
+            "module": null
+        },
+        {
+            "name": "cp2"
+        },
+        {
+            "name": "smtp",
+            "module": "../../index.js#plug",
+            "description": "SMTP service.",
+            "env" : {
+                "smtpDir" : "process.env.SMTP_DIR||null",
+                "smtpFile" : "process.env.SMTP_FILE||smtp.json"
+            }
+        }
+    ]
+}

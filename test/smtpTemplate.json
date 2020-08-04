@@ -1,0 +1,11 @@
+{
+    "service": "gmail",
+    "auth" : {
+        "type": "OAuth2",
+        "user" : "<your gmail email address>",
+        "accessToken" : "<your access token>",
+        "clientId" : "<your client ID>",
+        "clientSecret": "<your client secret>",
+        "refreshToken": "<your refresh token>"
+    }
+}
