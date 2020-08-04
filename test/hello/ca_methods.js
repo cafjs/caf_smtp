@@ -37,10 +37,10 @@ exports.methods = {
     async dirtySend(subject, body) {
         try {
             await this.$.smtp.dirtySend(this.$.props.toAddress, subject, body);
-            console.log('Dirty validate response OK');
+            console.log('Dirty send response OK');
             return [];
         } catch (err) {
-            console.log('Dirty validate response FAIL:' + err);
+            console.log('Dirty send response FAIL:' + err);
             return [err];
         }
     },
@@ -54,7 +54,7 @@ exports.methods = {
     async handler(id, response) {
         this.state.lastResponse = {id: id, response: response};
         if (!response[0]) {
-             console.log('validate response OK');
+             console.log('send response OK');
             this.state.nCalls = this.state.nCalls + 1;
         }
         return [];
